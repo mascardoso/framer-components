@@ -1,0 +1,12 @@
+# General
+.DS_Store
+Icon\r
+.yarnrc
+
+# Framer
+yarn-error.log
+node_modules
+.npmrc
+base.framerfx/.backups
+base.framerfx/.cache
+base.framerfx/.project.log

@@ -1,0 +1,9 @@
+{
+	"framer": {
+		"id": "027d67fa-ccbe-45e4-bd71-6da86131ca7f"
+	},
+	"peerDependencies": {
+		"framer": "^1"
+	},
+	"author": "John R"
+}
