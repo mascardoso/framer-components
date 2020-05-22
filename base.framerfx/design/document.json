@@ -15,19 +15,21 @@
             "__class" : "CodeComponentNode",
             "aspectRatio" : null,
             "bottom" : null,
-            "centerAnchorX" : 0.48867313915857608,
-            "centerAnchorY" : 0.48020304568527916,
+            "centerAnchorX" : 0.51928133216476779,
+            "centerAnchorY" : 0.36776268763402431,
             "children" : [
 
             ],
             "clip" : true,
             "codeComponentIdentifier" : ".\/ChromaVideo\/chroma-video.tsx_ChromaVideo",
             "codeComponentProps" : {
-              "blue" : 0,
-              "green" : 100,
-              "red" : 40,
+              "colorPickerValue" : "rgba(21, 1, 199, 1.00)",
+              "offsetB" : 26,
+              "offsetG" : 14,
+              "offsetR" : 25,
+              "showOriginalVideo" : false,
               "videoSrc" : true,
-              "videoSrcFile" : "design\/assets\/200404_B027_SLIP-BOOT-DARK_grade01_2048.mp4",
+              "videoSrcFile" : "design\/assets\/200404_A005_FOAM_RUNNER_grade01_2048.mp4",
               "videoSrcUrl" : ""
             },
             "codeOverrideEnabled" : false,
@@ -44,12 +46,12 @@
             "fillImagePixelWidth" : null,
             "fillImageResize" : "fill",
             "fillType" : "color",
-            "height" : 500,
+            "height" : 601,
             "heightType" : 0,
-            "id" : "f3Sghkhq1",
+            "id" : "Vv21xSotH",
             "intrinsicHeight" : null,
             "intrinsicWidth" : null,
-            "left" : 354,
+            "left" : null,
             "locked" : false,
             "name" : null,
             "opacity" : 1,
@@ -63,13 +65,11 @@
             "radiusPerCorner" : false,
             "radiusTopLeft" : 0,
             "radiusTopRight" : 0,
-            "right" : null,
+            "right" : 248,
             "rotation" : 0,
-            "top" : 223,
-            "videoSrcFile" : "",
-            "videoSrcUrl" : "",
+            "top" : 214,
             "visible" : true,
-            "width" : 500,
+            "width" : 601,
             "widthType" : 0
           }
         ],
@@ -80,7 +80,7 @@
         "exportOptions" : [
 
         ],
-        "fillColor" : "hsl(329, 72%, 48%)",
+        "fillColor" : "hsl(98, 38%, 82%)",
         "fillEnabled" : true,
         "fillImage" : null,
         "fillImageOriginalName" : null,
@@ -94,7 +94,7 @@
         "guidesY" : [
 
         ],
-        "height" : 985,
+        "height" : 1399,
         "heightType" : 0,
         "id" : "AFtkwdNHB",
         "intrinsicHeight" : null,
@@ -125,7 +125,7 @@
         "rotation" : 0,
         "top" : 1139,
         "visible" : true,
-        "width" : 1236,
+        "width" : 1141,
         "widthType" : 0
       }
     ],

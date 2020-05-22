@@ -10,3 +10,5 @@ node_modules
 base.framerfx/.backups
 base.framerfx/.cache
 base.framerfx/.project.log
+base.framerfx/design/assets
+base.framerfx/build
