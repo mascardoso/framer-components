@@ -1,9 +1,15 @@
 {
+	"license": "MIT",
 	"framer": {
-		"id": "027d67fa-ccbe-45e4-bd71-6da86131ca7f"
+		"displayName": "ChromaVideo"
 	},
 	"peerDependencies": {
 		"framer": "^1"
 	},
-	"author": "Marco Cardoso"
+	"author": "Marco Cardoso",
+	"name": "@framer/mcardoso.chromavideo",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"dependencies": {},
+	"devDependencies": {}
 }
