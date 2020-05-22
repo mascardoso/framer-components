@@ -1,13 +1,15 @@
 {
 	"license": "MIT",
 	"framer": {
-		"displayName": "ChromaVideo"
+		"displayName": "ChromaVideo",
+		"id": "4a4655ce-6e90-4bd2-a995-4d3c9fcfbba5"
 	},
 	"peerDependencies": {
 		"framer": "^1"
 	},
 	"author": "Marco Cardoso",
 	"name": "@framer/mcardoso.chromavideo",
+	"description": "By combining the capabilities of the video element with a canvas, you can now manipulate chroma-keying video (also known as the green screen effect).",
 	"version": "1.0.0",
 	"main": "dist/index.js",
 	"dependencies": {},

@@ -123,10 +123,18 @@ export const ChromaVideo = ({
 
   return (
     <main
-      style={{ width: framerComponentWidth, height: framerComponentHeight }}
+      style={{
+        ...styleMain,
+        width: framerComponentWidth,
+        height: framerComponentHeight
+      }}
     >
       <video /* eslint-disable-line jsx-a11y/media-has-caption */
-        style={{ width: '100%', display: showOriginalVideo ? 'block' : 'none' }}
+        style={{
+          ...styleVideo,
+          visibility: showOriginalVideo ? 'visible' : 'hidden',
+          position: showOriginalVideo ? 'relative' : 'absolute'
+        }}
         ref={videoRef}
         autoPlay
         muted
@@ -152,6 +160,16 @@ export const ChromaVideo = ({
 
 const styleC1: React.CSSProperties = {
   display: 'none'
+}
+
+const styleMain: React.CSSProperties = {
+  position: 'relative'
+}
+
+const styleVideo: React.CSSProperties = {
+  width: '100%',
+  top: 0,
+  left: 0
 }
 
 const defaultProps = {
