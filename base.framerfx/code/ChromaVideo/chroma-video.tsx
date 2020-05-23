@@ -7,7 +7,6 @@ export const ChromaVideo = ({
   videoSrc,
   width,
   height,
-  showOriginalVideo,
   colorPickerValue,
   offsetR,
   offsetG,
@@ -131,14 +130,14 @@ export const ChromaVideo = ({
     >
       <video /* eslint-disable-line jsx-a11y/media-has-caption */
         style={{
-          ...styleVideo,
-          visibility: showOriginalVideo ? 'visible' : 'hidden',
-          position: showOriginalVideo ? 'relative' : 'absolute'
+          ...styleVideo
         }}
         ref={videoRef}
         autoPlay
         muted
         loop
+        preload="auto"
+        playsInline
         crossOrigin="anonymous"
       >
         <source src={videoSrc ? videoSrcFile : videoSrcUrl} type="video/mp4" />
@@ -169,7 +168,9 @@ const styleMain: React.CSSProperties = {
 const styleVideo: React.CSSProperties = {
   width: '100%',
   top: 0,
-  left: 0
+  left: 0,
+  visibility: 'hidden',
+  position: 'absolute'
 }
 
 const defaultProps = {
@@ -203,13 +204,6 @@ const propertyControls = {
     title: ' ',
     type: ControlType.String,
     hidden: props => props.videoSrc === true
-  },
-  showOriginalVideo: {
-    type: ControlType.Boolean,
-    title: 'Show Original',
-    defaultValue: false,
-    enabledTitle: 'Show',
-    disabledTitle: 'Hide'
   },
   colorPickerValue: {
     title: 'Color Pick',
