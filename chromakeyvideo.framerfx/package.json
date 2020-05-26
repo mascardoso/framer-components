@@ -1,8 +1,7 @@
 {
 	"license": "MIT",
 	"framer": {
-		"displayName": "ChromaKeyVideo",
-		"id": "b730de78-e155-41c7-adec-ed5fb1ddde4c"
+		"displayName": "ChromaKeyVideo"
 	},
 	"peerDependencies": {
 		"framer": "^1"
