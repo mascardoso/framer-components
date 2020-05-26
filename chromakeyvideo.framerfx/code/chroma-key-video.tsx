@@ -1,22 +1,24 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { ControlType } from 'framer'
+import { addPropertyControls, ControlType } from 'framer'
 
 enum SrcType {
   Video = 'Video',
   Url = 'URL'
 }
 
-export const ChromaKeyVideo = ({
-  frVideoSrcFile,
-  frVideoSrcUrl,
-  frVideoSrc,
-  frColorPickerValue,
-  frOffsetR,
-  frOffsetG,
-  frOffsetB,
-  width,
-  height
-}) => {
+export function ChromaKeyVideo(props) {
+  const {
+    frVideoSrcFile,
+    frVideoSrcUrl,
+    frVideoSrc,
+    frColorPickerValue,
+    frOffsetR,
+    frOffsetG,
+    frOffsetB,
+    width,
+    height
+  } = props
+
   const videoRef = useRef<HTMLVideoElement>(null)
   const c1Ref = useRef<HTMLCanvasElement>(null)
   const c2Ref = useRef<HTMLCanvasElement>(null)
@@ -174,20 +176,12 @@ const styleVideo: React.CSSProperties = {
   position: 'absolute'
 }
 
-const defaultProps = {
+ChromaKeyVideo.defaultProps = {
   frVideoSrcFile: '',
   frVideoSrcUrl: ''
 }
 
-const rgbDefaultProps = {
-  type: ControlType.Number,
-  min: 0,
-  max: 50,
-  step: 1,
-  unit: '%'
-}
-
-const propertyControls = {
+addPropertyControls(ChromaKeyVideo, {
   frVideoSrc: {
     type: ControlType.SegmentedEnum,
     title: 'Source',
@@ -211,18 +205,27 @@ const propertyControls = {
     defaultValue: '#719603'
   },
   frOffsetR: {
-    ...rgbDefaultProps,
+    type: ControlType.Number,
+    min: 0,
+    max: 50,
+    step: 1,
+    unit: '%',
     title: 'Offset R'
   },
   frOffsetG: {
-    ...rgbDefaultProps,
+    type: ControlType.Number,
+    min: 0,
+    max: 50,
+    step: 1,
+    unit: '%',
     title: 'Offset G'
   },
   frOffsetB: {
-    ...rgbDefaultProps,
+    type: ControlType.Number,
+    min: 0,
+    max: 50,
+    step: 1,
+    unit: '%',
     title: 'Offset B'
   }
-}
-
-ChromaKeyVideo.defaultProps = defaultProps
-ChromaKeyVideo.propertyControls = propertyControls
+})
