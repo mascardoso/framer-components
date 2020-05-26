@@ -124,6 +124,7 @@ export const ChromaVideo = ({
     if (videoRef && videoRef.current) {
       const eventPlayListener = () => {
         setPlaying(true)
+        videoTimerCallback()
       }
 
       const eventPauseListener = () => {
@@ -138,7 +139,7 @@ export const ChromaVideo = ({
         videoRef.current.removeEventListener('pause', eventPauseListener)
       }
     }
-  })
+  }, [playing, frVideoSrc, frOffsetR, frOffsetG, frOffsetB, frColorPickerValue])
 
   useEffect(() => {
     videoTimerCallback()

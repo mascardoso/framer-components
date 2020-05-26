@@ -23,11 +23,11 @@
             "clip" : true,
             "codeComponentIdentifier" : ".\/ChromaVideo\/chroma-video.tsx_ChromaVideo",
             "codeComponentProps" : {
-              "frColorPickerValue" : "rgba(196, 196, 0, 1.00)",
+              "frColorPickerValue" : "rgba(7, 245, 107, 1.00)",
               "frOffsetB" : 0,
               "frOffsetG" : 0,
               "frOffsetR" : 0,
-              "frVideoSrc" : "URL",
+              "frVideoSrc" : "Video",
               "frVideoSrcFile" : "design\/assets\/200404_B027_SLIP-BOOT-DARK_grade01_2048.mp4",
               "frVideoSrcUrl" : "https:\/\/mdn.github.io\/dom-examples\/canvas\/chroma-keying\/media\/video.mp4"
             },
