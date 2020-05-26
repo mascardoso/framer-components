@@ -10,4 +10,4 @@ This repo aims to show a collection of [Framer X](https://www.framer.com/) compo
 
 ### Available Components:
 
-- **ChromaVideo** -> _(Manipulate chroma-keying video (also known as the green screen effect)_. Get it [here](https://packages.framer.com/?q=chromavideo).
+- **ChromaKeyVideo** -> _(Manipulate chroma-keying video (also known as the green screen effect)_.
