@@ -3,69 +3,6 @@
     "__class" : "RootNode",
     "children" : [
       {
-        "__class" : "FrameNode",
-        "aspectRatio" : null,
-        "blendingEnabled" : 0,
-        "blendingMode" : "normal",
-        "bottom" : null,
-        "centerAnchorX" : 0,
-        "centerAnchorY" : 0,
-        "children" : [
-
-        ],
-        "clip" : true,
-        "codeOverrideEnabled" : false,
-        "constraintsLocked" : false,
-        "duplicatedFrom" : null,
-        "exportOptions" : [
-
-        ],
-        "fillColor" : "white",
-        "fillEnabled" : true,
-        "fillImage" : null,
-        "fillImageOriginalName" : null,
-        "fillImagePixelHeight" : null,
-        "fillImagePixelWidth" : null,
-        "fillImageResize" : "fill",
-        "fillType" : "color",
-        "framePreset" : null,
-        "guidesX" : [
-
-        ],
-        "guidesY" : [
-
-        ],
-        "height" : 451,
-        "heightType" : 0,
-        "id" : "SZa9Bzque",
-        "intrinsicHeight" : null,
-        "intrinsicWidth" : null,
-        "isExternalMaster" : null,
-        "isMaster" : false,
-        "isTarget" : false,
-        "left" : 53,
-        "locked" : false,
-        "name" : null,
-        "opacity" : 1,
-        "originalid" : null,
-        "parentid" : "DpzF7qsu3",
-        "previewSettings" : null,
-        "radius" : 0,
-        "radiusBottomLeft" : 0,
-        "radiusBottomRight" : 0,
-        "radiusIsRelative" : false,
-        "radiusPerCorner" : false,
-        "radiusTopLeft" : 0,
-        "radiusTopRight" : 0,
-        "replicaInfo" : null,
-        "right" : null,
-        "rotation" : 0,
-        "top" : -31,
-        "visible" : true,
-        "width" : 467,
-        "widthType" : 0
-      },
-      {
         "__class" : "CodeComponentNode",
         "aspectRatio" : null,
         "bottom" : null,
@@ -78,10 +15,10 @@
         "codeComponentIdentifier" : ".\/chroma-key-video.tsx_ChromaKeyVideo",
         "codeComponentPackageVersion" : "1.71.0",
         "codeComponentProps" : {
-          "frColorPickerValue" : "#719603",
-          "frOffsetB" : 0,
-          "frOffsetG" : 0,
-          "frOffsetR" : 0,
+          "frColorPickerValue" : "rgba(18, 3, 187, 1.00)",
+          "frOffsetB" : 15,
+          "frOffsetG" : 32,
+          "frOffsetR" : 42,
           "frVideoSrc" : "URL",
           "frVideoSrcFile" : "",
           "frVideoSrcUrl" : ""
@@ -89,7 +26,7 @@
         "codeOverrideEnabled" : false,
         "constraintsLocked" : false,
         "duplicatedFrom" : [
-          "f7bC9PQWH"
+          "ugQ8QBCy1"
         ],
         "exportOptions" : [
 
@@ -104,10 +41,10 @@
         "fillType" : "color",
         "height" : 200,
         "heightType" : 0,
-        "id" : "pfn2gaXPA",
+        "id" : "MqsX5Hfh_",
         "intrinsicHeight" : null,
         "intrinsicWidth" : null,
-        "left" : 164,
+        "left" : 167,
         "locked" : false,
         "name" : null,
         "opacity" : 1,
@@ -123,7 +60,7 @@
         "radiusTopRight" : 0,
         "right" : null,
         "rotation" : 0,
-        "top" : 101,
+        "top" : 154,
         "visible" : true,
         "width" : 200,
         "widthType" : 0
