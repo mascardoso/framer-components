@@ -15,13 +15,13 @@
         "codeComponentIdentifier" : ".\/chroma-key-video.tsx_ChromaKeyVideo",
         "codeComponentPackageVersion" : "1.71.0",
         "codeComponentProps" : {
-          "frColorPickerValue" : "rgba(18, 3, 187, 1.00)",
+          "frColorPickerValue" : "rgba(168, 173, 3, 1.00)",
           "frOffsetB" : 15,
-          "frOffsetG" : 32,
-          "frOffsetR" : 42,
+          "frOffsetG" : 26,
+          "frOffsetR" : 20,
           "frVideoSrc" : "URL",
           "frVideoSrcFile" : "",
-          "frVideoSrcUrl" : ""
+          "frVideoSrcUrl" : "https:\/\/mdn.github.io\/dom-examples\/canvas\/chroma-keying\/media\/video.mp4"
         },
         "codeOverrideEnabled" : false,
         "constraintsLocked" : false,
