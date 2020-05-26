@@ -1,8 +1,0 @@
-# FT
-node_modules/
-
-# Base.framerfx
-base.framerfx/node_modules/
-base.framerfx/build/
-base.framerfx/code/canvas.tsx
-base.framerfx/dist/

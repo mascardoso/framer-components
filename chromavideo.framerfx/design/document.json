@@ -1,0 +1,85 @@
+{
+  "root" : {
+    "__class" : "RootNode",
+    "children" : [
+      {
+        "__class" : "CodeComponentNode",
+        "aspectRatio" : null,
+        "bottom" : null,
+        "centerAnchorX" : 0.55319148936170215,
+        "centerAnchorY" : 0.51418439716312059,
+        "children" : [
+
+        ],
+        "clip" : true,
+        "codeComponentIdentifier" : ".\/ChromaVideo\/chroma-video.tsx_ChromaVideo",
+        "codeComponentProps" : {
+          "colorPickerValue" : "rgb(4, 241, 92)",
+          "offsetB" : 0,
+          "offsetG" : 0,
+          "offsetR" : 27,
+          "videoSrc" : true,
+          "videoSrcFile" : "design\/assets\/200404_B027_SLIP-BOOT-DARK_grade01_2048.mp4",
+          "videoSrcUrl" : ""
+        },
+        "codeOverrideEnabled" : false,
+        "constraintsLocked" : false,
+        "deviceType" : null,
+        "exportOptions" : [
+
+        ],
+        "fillColor" : "rgba(255,255,255,1)",
+        "fillEnabled" : false,
+        "fillImage" : null,
+        "fillImageOriginalName" : null,
+        "fillImagePixelHeight" : null,
+        "fillImagePixelWidth" : null,
+        "fillImageResize" : "fill",
+        "fillType" : "color",
+        "height" : 564,
+        "heightType" : 0,
+        "id" : "a6EPMsnx4",
+        "intrinsicHeight" : null,
+        "intrinsicWidth" : null,
+        "left" : 3316,
+        "locked" : false,
+        "name" : null,
+        "opacity" : 1,
+        "originalid" : null,
+        "parentid" : "DpzF7qsu3",
+        "previewSettings" : null,
+        "radius" : 0,
+        "radiusBottomLeft" : 0,
+        "radiusBottomRight" : 0,
+        "radiusIsRelative" : false,
+        "radiusPerCorner" : false,
+        "radiusTopLeft" : 0,
+        "radiusTopRight" : 0,
+        "right" : null,
+        "rotation" : 0,
+        "top" : 1474,
+        "visible" : true,
+        "width" : 564,
+        "widthType" : 0
+      }
+    ],
+    "guidesX" : [
+
+    ],
+    "guidesY" : [
+
+    ],
+    "id" : "DpzF7qsu3",
+    "name" : null,
+    "originalid" : null,
+    "parentid" : null,
+    "tokens" : {
+
+    },
+    "tokensIndex" : [
+
+    ],
+    "visible" : false
+  },
+  "version" : 55
+}
