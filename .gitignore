@@ -1,0 +1,16 @@
+# General
+.DS_Store
+Icon\r
+.yarnrc
+.npmrc
+.backups
+.cache
+.project.log
+yarn-error.log
+node_modules
+dist
+build
+
+# Framer
+**/design/assets
+**/design/images

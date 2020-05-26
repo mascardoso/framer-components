@@ -1,0 +1,8 @@
+# FT
+node_modules/
+
+# [component].framerfx
+**/node_modules/
+**/build/
+**/code/canvas.tsx
+**/dist/

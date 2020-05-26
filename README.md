@@ -4,6 +4,7 @@ This repo aims to show a collection of [Framer X](https://www.framer.com/) compo
 
 ### How to install locally for development
 
+- Run `yarn` on root folder
 - Run `yarn` on `[component].framerfx`
 - Open `[component].framerfx`
 

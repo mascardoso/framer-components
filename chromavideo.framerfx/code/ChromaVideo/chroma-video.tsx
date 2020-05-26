@@ -1,27 +1,34 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { ControlType } from 'framer'
 
+enum SrcType {
+  Video = 'Video',
+  Url = 'URL'
+}
+
 export const ChromaVideo = ({
-  videoSrcFile,
-  videoSrcUrl,
-  videoSrc,
+  frVideoSrcFile,
+  frVideoSrcUrl,
+  frVideoSrc,
+  frColorPickerValue,
+  frOffsetR,
+  frOffsetG,
+  frOffsetB,
   width,
-  height,
-  colorPickerValue,
-  offsetR,
-  offsetG,
-  offsetB
+  height
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const c1Ref = useRef<HTMLCanvasElement>(null)
   const c2Ref = useRef<HTMLCanvasElement>(null)
-  const framerComponentWidth = width
-  const framerComponentHeight = height
   const rgbMaxValue = 255
+  const frComponentWidth = width
+  const frComponentHeight = height
 
   const [playing, setPlaying] = useState(false)
 
-  const rgbValues = colorPickerValue.replace(/^rgba?\(|\s+|\)$/g, '').split(',')
+  const rgbValues = frColorPickerValue
+    .replace(/^rgba?\(|\s+|\)$/g, '')
+    .split(',')
 
   const parsedRgbValues = {
     r: parseInt(rgbValues[0]),
@@ -31,20 +38,48 @@ export const ChromaVideo = ({
 
   const extractSelectedRgbRanges = () => {
     return {
-      r: getMinMaxRgbValue(parsedRgbValues.r, offsetR),
-      g: getMinMaxRgbValue(parsedRgbValues.g, offsetG),
-      b: getMinMaxRgbValue(parsedRgbValues.b, offsetB)
+      r: getMinMaxRgbValue(parsedRgbValues.r, frOffsetR),
+      g: getMinMaxRgbValue(parsedRgbValues.g, frOffsetG),
+      b: getMinMaxRgbValue(parsedRgbValues.b, frOffsetB)
     }
   }
 
   const getMinMaxRgbValue = (value: number, offset: number) => {
     const delta = (rgbMaxValue * offset) / 100
-    // if offset is 0 then its off
+    // if offset is 0 then the offset is not in use
     return {
       min: offset === 0 ? value : Math.round(Math.max(value - delta, 0)),
       max:
         offset === 0 ? value : Math.round(Math.min(value + delta, rgbMaxValue))
     }
+  }
+
+  const getVideoContent = () => {
+    return (
+      <>
+        <video /* eslint-disable-line jsx-a11y/media-has-caption */
+          style={{ ...styleVideo }}
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          crossOrigin="anonymous"
+          src={frVideoSrc === SrcType.Url ? frVideoSrcUrl : frVideoSrcFile}
+        />
+        <canvas
+          ref={c1Ref}
+          width={frComponentWidth}
+          height={frComponentHeight}
+          style={styleC1}
+        ></canvas>
+        <canvas
+          ref={c2Ref}
+          width={frComponentWidth}
+          height={frComponentHeight}
+        ></canvas>
+      </>
+    )
   }
 
   const videoTimerCallback = () => {
@@ -61,19 +96,8 @@ export const ChromaVideo = ({
     const c1Ctx = c1Ref.current.getContext('2d')
     const c2Ctx = c2Ref.current.getContext('2d')
 
-    c1Ctx.drawImage(
-      videoRef.current,
-      0,
-      0,
-      framerComponentWidth,
-      framerComponentHeight
-    )
-    const frame = c1Ctx.getImageData(
-      0,
-      0,
-      framerComponentWidth,
-      framerComponentHeight
-    )
+    c1Ctx.drawImage(videoRef.current, 0, 0, frComponentWidth, frComponentHeight)
+    const frame = c1Ctx.getImageData(0, 0, frComponentWidth, frComponentHeight)
     const l = frame.data.length / 4
 
     for (let i = 0; i < l; i++) {
@@ -89,7 +113,7 @@ export const ChromaVideo = ({
         b >= rgbRanges.b.min &&
         b <= rgbRanges.b.max
       )
-        frame.data[i * 4 + 3] = 0 // set alpha to 0 when there's a match
+        frame.data[i * 4 + 3] = 0 // set alpha channel to 0
     }
 
     c2Ctx.putImageData(frame, 0, 0)
@@ -118,41 +142,17 @@ export const ChromaVideo = ({
 
   useEffect(() => {
     videoTimerCallback()
-  }, [playing])
+  }, [playing, frVideoSrc, frOffsetR, frOffsetG, frOffsetB, frColorPickerValue])
 
   return (
     <main
       style={{
         ...styleMain,
-        width: framerComponentWidth,
-        height: framerComponentHeight
+        width: frComponentWidth,
+        height: frComponentHeight
       }}
     >
-      <video /* eslint-disable-line jsx-a11y/media-has-caption */
-        style={{
-          ...styleVideo
-        }}
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        preload="auto"
-        playsInline
-        crossOrigin="anonymous"
-      >
-        <source src={videoSrc ? videoSrcFile : videoSrcUrl} type="video/mp4" />
-      </video>
-      <canvas
-        ref={c1Ref}
-        width={framerComponentWidth}
-        height={framerComponentHeight}
-        style={styleC1}
-      ></canvas>
-      <canvas
-        ref={c2Ref}
-        width={framerComponentWidth}
-        height={framerComponentHeight}
-      ></canvas>
+      {getVideoContent()}
     </main>
   )
 }
@@ -174,9 +174,8 @@ const styleVideo: React.CSSProperties = {
 }
 
 const defaultProps = {
-  videoSrcFile: '',
-  videoSrcUrl: '',
-  videoSrc: true
+  frVideoSrcFile: '',
+  frVideoSrcUrl: ''
 }
 
 const rgbDefaultProps = {
@@ -188,37 +187,37 @@ const rgbDefaultProps = {
 }
 
 const propertyControls = {
-  videoSrc: {
-    type: ControlType.Boolean,
-    title: 'MP4 Src',
-    enabledTitle: 'File',
-    disabledTitle: 'Url'
+  frVideoSrc: {
+    type: ControlType.SegmentedEnum,
+    title: 'Source',
+    options: [SrcType.Url, SrcType.Video]
   },
-  videoSrcFile: {
+  frVideoSrcFile: {
     title: ' ',
     type: ControlType.File,
     allowedFileTypes: ['mp4'],
-    hidden: props => props.videoSrc === false
+    hidden: props => props.frVideoSrc === SrcType.Url
   },
-  videoSrcUrl: {
-    title: ' ',
+  frVideoSrcUrl: {
     type: ControlType.String,
-    hidden: props => props.videoSrc === true
+    title: ' ',
+    placeholder: '../file.mp4',
+    hidden: props => props.frVideoSrc === SrcType.Video
   },
-  colorPickerValue: {
+  frColorPickerValue: {
     title: 'Color Pick',
     type: ControlType.Color,
     defaultValue: '#719603'
   },
-  offsetR: {
+  frOffsetR: {
     ...rgbDefaultProps,
     title: 'Offset R'
   },
-  offsetG: {
+  frOffsetG: {
     ...rgbDefaultProps,
     title: 'Offset G'
   },
-  offsetB: {
+  frOffsetB: {
     ...rgbDefaultProps,
     title: 'Offset B'
   }
